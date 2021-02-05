@@ -15,8 +15,6 @@ structure = {
     "date": "date",
     "name": "areaName",
     "code": "areaCode",
-    # "cases": {"daily": "newCasesByPublishDate", "cumulative": "cumCasesByPublishDate"},
-    # "deaths": {"daily": "newDeathsByDeathDate", "cumulative": "cumDeathsByDeathDate"},
     "vaccines": {
         "first_dose": {
             "daily": "newPeopleVaccinatedFirstDoseByPublishDate",
