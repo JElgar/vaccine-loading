@@ -12,6 +12,18 @@
       :line-height="14"
       :percent=secondPercentage>
     </k-progress>
+    <k-progress 
+      status="success" 
+      type="line"
+      :line-height="14"
+      :percent=thirdPercentage>
+    </k-progress>
+    <k-progress 
+      status="success" 
+      type="line"
+      :line-height="14"
+      :percent=fourthPercentage>
+    </k-progress>
   </div>
 </template>
 
@@ -24,7 +36,9 @@ export default {
   data () {
     return {
       firstPercentage: null,
-      secondPercentage: null
+      secondPercentage: null,
+      thirdPercentage: null,
+      fourthPercentage: null
     }
   },
 
@@ -82,11 +96,14 @@ export default {
       }
       else {
         const ukPop = 68098857
+        const ukAdultPop = 68098857 - 12700000
         const today = data["data"]["data"][0];
         const firstDose = today["vaccines"]["first_dose"]["cumulative"]
         const secondDose = today["vaccines"]["second_dose"]["cumulative"]
         this.firstPercentage = (firstDose / ukPop) * 100
         this.secondPercentage = ((firstDose + secondDose) / (ukPop * 2)) * 100
+        this.thirdPercentage = (firstDose / ukAdultPop) * 100
+        this.fourthPercentage = ((firstDose + secondDose) / (ukAdultPop * 2)) * 100
       }
     });
 
